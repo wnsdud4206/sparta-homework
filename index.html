@@ -431,6 +431,10 @@
                 white-space: nowrap;
             }
 
+            .form-group .col-sm-10 {
+                padding-right: 0;
+            }
+
             form #color_select > option:nth-child(2) {
                 background-color: rgba(78, 88, 81, .9);
                 color: white;
@@ -561,6 +565,8 @@
                 transition: width .1s ease-out;
             }
 
+            /* 아이폰에서 form 전화번호요소 줄바꿈 현상(해결) */
+
             @media (min-width: 1199.99px) {
                 .container > .nav_peep {
                     transform: translateX(70%);
@@ -608,16 +614,26 @@
                 }
 
                 .form-group {
-                    display: flex;
-                    justify-content: space-between;
+                    /*display: flex;*/
+                    /*justify-content: space-between;*/
+                    flex-wrap: nowrap;
                 }
                 .form-group > label {
+                    min-width: 72.89px;
                     flex: 0 0 16.6667%;
                     white-space: nowrap;
                 }
-                form > .form-group > .col-sm-10 {
-                    flex: 0 0 calc(100% - 20.6667%);
+                .form-group:not(:nth-child(7)) > label {
+                    /*margin-right: calc(72.89px - 50.69px);*/
                 }
+                .form-group > .col-sm-10 {
+                    /*display: flex;*/
+                    /*justify-content: flex-end;*/
+                }
+                .form-group .form-control {
+                    /*width: 200px;*/
+                }
+
                 .container > nav > .menu {
                     width: 100vw;
                 }
